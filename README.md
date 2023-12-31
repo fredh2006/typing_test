@@ -1,1 +1,1 @@
-# typing_test
+A typing test made with React
