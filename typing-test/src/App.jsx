@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Fragment, useState } from 'react'
 import './App.css'
-import HelloWorld from './components/HelloWorld'
+import WordContainer from './components/WordContainer'
 
 function App() {
-  return <div><HelloWorld /></div>
+  return (
+      <WordContainer/>
+  )
 }
 
 export default App
