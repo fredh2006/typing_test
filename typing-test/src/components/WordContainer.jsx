@@ -31,9 +31,12 @@ function fetchWords() {
   let lastSpace;
   let wordsTyped = 0;
 
+  //check for spaces and handle event
   const handleChange = (event) => {
     typed = JSON.stringify(event.target.value);
+    const typeArea = document.querySelector('.typeArea')
 
+    //special case for first word
     if (!firstWord) {
       if (typed.includes(" ")) {
         pastWord = typed.substring(1, typed.indexOf(" "));
@@ -41,12 +44,12 @@ function fetchWords() {
         lastSpace = typed.indexOf(" ")+1;
         let correctWord = words[wordsTyped]
         let correctWordNoSpace = correctWord.substring(0, correctWord.indexOf(" "))
-        console.log(correctWordNoSpace);
-        if(pastWord === correctWordNoSpace){
+        if(checkWord(pastWord, correctWordNoSpace)){
             console.log("correct word");
         }else{
             console.log("wrong word");
         }
+        typeArea.value = '';
         wordsTyped++; 
         return;
       } else {
@@ -56,26 +59,33 @@ function fetchWords() {
 
     if (firstWord) {
       let currentTyped = typed.substring(lastSpace);
-      console.log(currentTyped);
 
-      if (currentTyped.indexOf(" ") >= 0) {
-        pastWord = currentTyped.substring(0, currentTyped.indexOf(" "));
+      if (typed.indexOf(" ") >= 0) {
+        pastWord = typed.substring(1, typed.indexOf(" "));
+        console.log(pastWord);
         lastSpace = typed.split(" ", wordsTyped+1).join(" ").length+1;
         let correctWord = words[wordsTyped]
         let correctWordNoSpace = correctWord.substring(0, correctWord.indexOf(" "))
-        if(pastWord == correctWordNoSpace){
+        if(checkWord(pastWord, correctWordNoSpace)){
             console.log("correct word");
         }else{
             console.log("wrong word");
         }
         wordsTyped++;
+        typeArea.value = '';
       } else {
         return;
       }
-
-
     }
+
   };
+
+  const checkWord = (currentWord, correctWord) =>{
+    if(currentWord == correctWord){
+        return true;
+    }
+    return false;
+  }
 
   return (
     <Fragment>
@@ -88,8 +98,8 @@ function fetchWords() {
         ))}
       </div>
       <input
+        className = "typeArea"
         type="textarea"
-        placeholder="start typing here"
         onChange={handleChange}
       ></input>
     </Fragment>
