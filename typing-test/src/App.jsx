@@ -2,6 +2,8 @@ import { Fragment, useState, useEffect, useRef } from "react";
 import "./App.css";
 import WordContainer from "./components/WordContainer";
 import Stats from "./components/Stats";
+import Footer from "./components/Footer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
   const randomizedWords = [
@@ -370,6 +372,8 @@ function App() {
         </div>
       </div>
       <Stats />
+      <FontAwesomeIcon icon="fa-brands fa-github" />
+      <Footer />
     </>
   );
 }
