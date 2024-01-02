@@ -1,4 +1,4 @@
-function Header() {
+function Stats() {
   return (
     <div className="wordCount" id="wordCount">
       WPM: XX / ACC: XX
@@ -6,4 +6,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Stats;

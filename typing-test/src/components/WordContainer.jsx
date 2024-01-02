@@ -12,8 +12,8 @@ function fetchWords(props) {
 
   totalWords = Object.values(props.words);
 
-  if (Object.values(props.words).length > 10) {
-    totalWords = Object.values(props.words).splice(10);
+  if (Object.values(props.words).length > props.wordCount) {
+    totalWords = Object.values(props.words).splice(props.wordCount);
   }
 
   if (totalWords.length == 1) {
@@ -22,6 +22,8 @@ function fetchWords(props) {
     for (let i = 0; i < allWords.length; i++) {
       if (allWords[i].classList.contains("correct"))
         allWords[i].classList.remove("correct");
+      if(allWords[i].classList.contains('wrong'))
+        allWords[i].classList.remove('wrong');
     }
   }
 
@@ -37,6 +39,7 @@ function fetchWords(props) {
 
     //special case for first word
     if (!firstWord) {
+
       if (typed.includes(" ")) {
         pastWord = typed.substring(1, typed.indexOf(" "));
         firstWord = true;
@@ -49,6 +52,11 @@ function fetchWords(props) {
 
         typeArea.value = "";
         wordsTyped++;
+
+        let nextWord = totalWords[wordsTyped];
+        let word = document.getElementById(`${nextWord}`);
+        word.classList.add('current')
+
         return;
       } else {
         return;
@@ -66,6 +74,13 @@ function fetchWords(props) {
         checkWord(pastWord, correctWordNoSpace);
         wordsTyped++;
         typeArea.value = "";
+
+        if(!(wordsTyped==totalWords.length)){
+        let nextWord = totalWords[wordsTyped];
+        let word = document.getElementById(`${nextWord}`);
+        word.classList.add('current')
+        }
+
       } else {
         return;
       }
@@ -131,7 +146,7 @@ function fetchWords(props) {
 
   return (
     <Fragment>
-      <h1 className="title">Words</h1>
+      <h1 className="title">typeit</h1>
       <div className="words-container">
         {totalWords.map((word) => (
           <span className="word" key={word} id={word}>
@@ -144,6 +159,8 @@ function fetchWords(props) {
         type="textarea"
         onChange={handleChange}
       ></input>
+
+
     </Fragment>
   );
 }
