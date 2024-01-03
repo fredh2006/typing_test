@@ -24,6 +24,8 @@ function fetchWords(props) {
         allWords[i].classList.remove("correct");
       if(allWords[i].classList.contains('wrong'))
         allWords[i].classList.remove('wrong');
+        if(allWords[i].classList.contains('current'))
+        allWords[i].classList.remove('current');
     }
   }
 
