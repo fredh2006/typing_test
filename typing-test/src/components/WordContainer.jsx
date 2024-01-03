@@ -16,16 +16,17 @@ function fetchWords(props) {
     totalWords = Object.values(props.words).splice(props.wordCount);
   }
 
+  //removes all correct, wrong, and current classes present on words
   if (totalWords.length == 1) {
     totalWords = totalWords[0];
     let allWords = document.querySelectorAll(".word");
     for (let i = 0; i < allWords.length; i++) {
       if (allWords[i].classList.contains("correct"))
         allWords[i].classList.remove("correct");
-      if(allWords[i].classList.contains('wrong'))
-        allWords[i].classList.remove('wrong');
-        if(allWords[i].classList.contains('current'))
-        allWords[i].classList.remove('current');
+      if (allWords[i].classList.contains("wrong"))
+        allWords[i].classList.remove("wrong");
+      if (allWords[i].classList.contains("current"))
+        allWords[i].classList.remove("current");
     }
   }
 
@@ -41,7 +42,6 @@ function fetchWords(props) {
 
     //special case for first word
     if (!firstWord) {
-
       if (typed.includes(" ")) {
         pastWord = typed.substring(1, typed.indexOf(" "));
         firstWord = true;
@@ -57,7 +57,7 @@ function fetchWords(props) {
 
         let nextWord = totalWords[wordsTyped];
         let word = document.getElementById(`${nextWord}`);
-        word.classList.add('current')
+        word.classList.add("current");
 
         return;
       } else {
@@ -77,12 +77,11 @@ function fetchWords(props) {
         wordsTyped++;
         typeArea.value = "";
 
-        if(!(wordsTyped==totalWords.length)){
-        let nextWord = totalWords[wordsTyped];
-        let word = document.getElementById(`${nextWord}`);
-        word.classList.add('current')
+        if (!(wordsTyped == totalWords.length)) {
+          let nextWord = totalWords[wordsTyped];
+          let word = document.getElementById(`${nextWord}`);
+          word.classList.add("current");
         }
-
       } else {
         return;
       }
@@ -161,8 +160,6 @@ function fetchWords(props) {
         type="textarea"
         onChange={handleChange}
       ></input>
-
-
     </Fragment>
   );
 }

@@ -1,91 +1,91 @@
 .correct {
-    color: green !important; 
+  color: green !important; /*overrides current class*/
 }
 
-.wrong{
-    color: red !important;
+.wrong {
+  color: red !important; /*overrides current class*/
 }
 
-.current{
-    color: blue;
+.current {
+  color: blue;
 }
 
-#root{
-    padding-top: 200px;
+#root {
+  padding-top: 200px;
 }
 
-.words-container{
-    background-color:#D3D3D3;
-    margin: 0 28vw;
-    text-align: left;
-    padding: 1rem 1rem 1.5rem 1rem;
-    line-height: 1.5rem;
-    word-spacing: 1px;
-    border: 1px solid #D3D3D3;
-    border-radius: 5px;
+.words-container {
+  background-color: #d3d3d3;
+  margin: 0 28vw;
+  text-align: left;
+  padding: 1rem 1rem 1.5rem 1rem;
+  line-height: 1.5rem;
+  word-spacing: 1px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
 }
 
-.title{
-    text-align: center;
-    font-weight: bold;
+.title {
+  text-align: center;
+  font-weight: bold;
 }
 
-.smaller{
-    padding: 0.5rem 1rem;
+.smaller {
+  padding: 0.5rem 1rem;
 }
 
-.typeArea{
-    width: calc(100px + 31.5vw);
-    height: 1.8rem;
-    margin-left: 28vw;
-    margin-top: 10px;
-    border-radius: 4px;
-    padding-left: 10px;
-    outline: none;
-    border: 1px solid black;
+.typeArea {
+  width: calc(100px + 31.5vw);
+  height: 1.8rem;
+  margin-left: 28vw;
+  margin-top: 10px;
+  border-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid black;
 }
 
-.button{
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 4px;
-    border: 1px solid black;
-    height: 1.8rem;
+.button {
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  border: 1px solid black;
+  height: 1.8rem;
 }
 
-.button:hover{
-    border-radius: 4px;
-    border: 1px solid black;
+.button:hover {
+  border-radius: 4px;
+  border: 1px solid black;
 }
 
-.wordChoice-container{
-    margin-top: 10px;
-    margin-left: 28vw;
+.wordChoice-container {
+  margin-top: 10px;
+  margin-left: 28vw;
 }
 
-.wordCount{
-    margin-top: -25px;
-    margin-left: 62vw;
-    width: max-content;
+.wordCount {
+  margin-top: -25px;
+  margin-left: 62vw;
+  width: max-content;
 }
 
-.active{
-    font-weight: bold;
+.active {
+  font-weight: bold;
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #D3D3D3;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d3d3d3;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
 
-#footer-text{
-    margin-right: 10px;
-    color: #000;
-    font-size: 1rem;
+#footer-text {
+  margin-right: 10px;
+  color: #000;
+  font-size: 1rem;
 }

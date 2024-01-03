@@ -1,11 +1,12 @@
-import { Fragment, useState, useEffect, useRef } from "react";
+import { Fragment, useState, useEffect} from "react";
 import "./App.css";
 import WordContainer from "./components/WordContainer";
 import Stats from "./components/Stats";
 import Footer from "./components/Footer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
+
+  //array of random words
   const randomizedWords = [
     "the ",
     "be ",
@@ -213,18 +214,12 @@ function App() {
 
   let isMounted = false;
 
-  let prevWordCount = 10;
+  const [words, setWords] = useState({}); //displayed words
 
-  const [words, setWords] = useState({});
+  const [wordCount, setWordCount] = useState(50); //amount of words displayed
 
-  const [wordCount, setWordCount] = useState(50);
-
-  const [wordVisible, setWordVisible] = useState(true);
-  const [timeVisible, setTimeVisible] = useState(false);
-
-  //special case for first test
-  if (typeof window !== "undefined") {
-    // Check if we're running in the browser.
+  //special case for first occurence
+  if (typeof window !== "undefined") { // check if we're running in the browser
     let currentIndex = randomizedWords.length;
     let randomIndex;
     while (currentIndex > 0) {
@@ -262,8 +257,10 @@ function App() {
     setWords({
       words: nextWords,
     });
+
   };
 
+  //handles a click on word options
   const handleWordClick = (event) => {
     let newWord;
     const wordContainer = document.querySelector(".words-container");
@@ -291,10 +288,10 @@ function App() {
 
   useEffect(() => {
     randomizeWords();
-  }, [wordCount]);
+  }, [wordCount]); //callback
 
+  //jquery for responsive elements
   $(window).bind("load", function () {
-
     let wordsWidth = $(".words-container").outerWidth();
     let buttonWidth = $(".button").outerWidth();
     let typeWidth = wordsWidth - buttonWidth - 10;
@@ -337,42 +334,27 @@ function App() {
     <>
       <div className="options">
         <WordContainer words={words} wordCount={wordCount} />
-        <button
-          className="button is-small"
-          type="button"
-          onClick={randomizeWords}
-        >
-          Shuffle
-        </button>
+        <button className="button is-small" type="button" onClick={randomizeWords}>Shuffle</button>
         <div className="wordChoice-container">
           <span className="wordChoice-header">Words &nbsp; | &nbsp; </span>
           <span onClick={handleWordClick}>
-            <span id="10" className="option">
-              10
-            </span>{" "}
+            <span id="10" className="option">10</span>{" "}
             /{" "}
           </span>
           <span onClick={handleWordClick}>
-            <span id="25" className="option">
-              25
-            </span>{" "}
+            <span id="25" className="option">25</span>{" "}
             /{" "}
           </span>
           <span onClick={handleWordClick}>
-            <span id="50" className="option active">
-              50
-            </span>{" "}
+            <span id="50" className="option active">50 </span>{" "}
             /{" "}
           </span>
           <span onClick={handleWordClick}>
-            <span id="100" className="option">
-              100
-            </span>{" "}
+            <span id="100" className="option">100</span>{" "}
           </span>
         </div>
       </div>
       <Stats />
-      <FontAwesomeIcon icon="fa-brands fa-github" />
       <Footer />
     </>
   );
