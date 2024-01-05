@@ -89,3 +89,15 @@
   color: #000;
   font-size: 1rem;
 }
+
+@media (max-width: 600px){
+  #root{
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 600px){
+  #root{
+    padding-top: 75px;
+  }
+}
