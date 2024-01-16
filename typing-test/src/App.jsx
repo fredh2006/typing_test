@@ -3,6 +3,7 @@ import "./App.css";
 import WordContainer from "./components/WordContainer";
 import Stats from "./components/Stats";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
 
