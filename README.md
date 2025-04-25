@@ -5,4 +5,4 @@ https://typeit-seven.vercel.app
 WPM and ACC calculated according to: https://www.typetolearn.app/knowledge-base/how-words-per-minute-and-accuracy-are-calculated 
 (WPM shown is gross)
 
-![main screen](https://i.ibb.co/8rXCSs0/image-2024-01-02-163803607.png)
+![Image](https://github.com/user-attachments/assets/e37f43e5-5954-4d42-947c-eed7395bb996)
