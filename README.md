@@ -41,5 +41,3 @@ The main project structure is organized as follows:
 # License
 
 No license is currently being used.
-
-Test with Supabase provider_token.
