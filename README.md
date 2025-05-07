@@ -1,19 +1,18 @@
 # Project Overview
 
-This project is a typing test application built using React. It allows users to test their typing speed and accuracy by typing a given set of words. The application provides real-time feedback on the user's typing, highlighting correctly typed words in green, incorrectly typed words in red, and the current word in blue. Additionally, it displays the user's words per minute (WPM) and accuracy (ACC) once the test is completed.
+This project is titled "typeit" and appears to be a web-based typing test application created primarily with React. When a user types a given set of randomized words displayed on the screen, the application tracks typing speed (Words Per Minute) and typing accuracy. The project provides real-time feedback on display words highlighted for accuracy (green for correctly typed words and red for incorrect ones).
 
 # Tech Stack
 
-This project was created using React, Vite, Bulma, Font Awesome, and jQuery.
+This project was created using React, HTML, CSS, Bulma, jQuery, FontAwesome, and Vercel Speed Insights.
 
 # Installation & Setup
 
-To install dependencies and run the project locally, follow these steps:
+To install and run the project, follow these steps:
 
-1. Clone the repository:
+1. Navigate into the project folder:
    bash
-   git clone https://github.com/fredh2006/typing_test.git
-   cd typing_test
+   cd typing-test
    
 
 2. Install the required dependencies:
@@ -21,22 +20,21 @@ To install dependencies and run the project locally, follow these steps:
    npm install
    
 
-3. Start the development server:
+3. Start the development server with:
    bash
    npm run dev
    
-
-4. Open your browser and navigate to `http://localhost:5173` to view the application.
+    
+Optionally, run `npm run build` to build the project or `npm run preview` to preview your build.
 
 # Project Structure
 
-The main project structure is organized as follows:
-
-- `src/App.jsx`: The main application component where the typing test logic is implemented.
-- `src/main.jsx`: The entry point of the React application where the root component is rendered.
-- `src/components/Footer.jsx`: A component that displays a footer with a link to the GitHub repository.
-- `src/components/Stats.jsx`: A component that displays the words per minute (WPM) and accuracy (ACC) stats (currently placeholder values).
-- `src/components/WordContainer.jsx`: A component that handles the logic for the typing test, including word highlighting and tracking user input.
+- `index.html`: Main HTML file that loads scripts and stylesheets including Bulma CSS and jQuery.
+- `package.json`: Includes project scripts and dependencies such as React, Bulma, jQuery, and @fortawesome packages.
+- `src/App.jsx`: Main React component that includes state management and renders `WordContainer`, `Stats`, and `Footer` components.
+- `src/components/Footer.jsx`: Component that renders the footer section which includes a link to the project GitHub repository.
+- `src/components/Stats.jsx`: Component that displays statistics such as words per minute (WPM) and accuracy (ACC).
+- `src/components/WordContainer.jsx`: Component handling typed words display and user typing interaction processing logic.
 
 # License
 
